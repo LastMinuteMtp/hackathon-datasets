@@ -1,0 +1,1149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="opendata" resourceRoot="" soapui-version="4.5.2" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="getGTFSBinding" type="wsdl" bindingName="{http://www.talend.org/service/}getGTFSBinding" soapVersion="1_1" anonymous="optional" definition="http://193.239.192.237:8040/services/getGTFS?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://193.239.192.237:8040/services/getGTFS?wsdl"><con:part><con:url>http://193.239.192.237:8040/services/getGTFS?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="getGTFS" targetNamespace="http://www.talend.org/service/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.talend.org/service/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.talend.org/service/">
+      <xsd:element name="getGTFSRequest">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Key" type="xsd:string"></xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="1" name="API" type="xsd:int"></xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Version" type="xsd:int"></xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getGTFSResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" name="State" type="tns:StateType"></xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="GTFS" type="tns:GTFSType"></xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="StateType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="State">
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:enumeration value="OK"/>
+                <xsd:enumeration value="NG"/>
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Info" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="GTFSType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="Version" type="xsd:int"></xsd:element>
+          <xsd:element maxOccurs="1" minOccurs="1" name="StartPeriod" type="xsd:date"></xsd:element>
+          <xsd:element maxOccurs="1" minOccurs="1" name="EndPeriod" type="xsd:date"></xsd:element>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Url" type="xsd:string"></xsd:element>
+          <xsd:element maxOccurs="1" minOccurs="1" name="IsDefault" type="xsd:int"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="NewOperation">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="NewOperationResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getGTFSRequest">
+    <wsdl:part element="tns:getGTFSRequest" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getGTFSResponse">
+    <wsdl:part element="tns:getGTFSResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="getGTFS">
+    <wsdl:operation name="getGTFS">
+      <wsdl:input message="tns:getGTFSRequest"></wsdl:input>
+      <wsdl:output message="tns:getGTFSResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="getGTFSBinding" type="tns:getGTFS">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getGTFS">
+      <soap:operation soapAction="http://www.talend.org/service/getGTFS"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="getGTFS">
+    <wsdl:port binding="tns:getGTFSBinding" name="getGTFS">
+      <soap:address location="http://193.239.192.237:8040/services/getGTFS"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8090/services/getGTFS</con:endpoint><con:endpoint>http://193.239.192.237:8040/services/getGTFS</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://www.talend.org/service/getGTFS" name="getGTFS" bindingOperationName="getGTFS" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="All"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://193.239.192.237:8040/services/getGTFS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://www.talend.org/service/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:getGTFSRequest>
+         <Key>kGjGDgCWCUijXyExmQVvQ</Key>
+         <API>1</API>
+      </ser:getGTFSRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.talend.org/service/getGTFS"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Avec Version"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://193.239.192.237:8040/services/getGTFS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tns="http://www.talend.org/service/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tns:getGTFSRequest>
+         <Key>kGjGDgCWCUijXyExmQVvQ</Key>
+         <API>1</API>
+         <!--Optional:-->
+         <Version>2</Version>
+      </tns:getGTFSRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.talend.org/service/getGTFS"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="getLinesBinding" type="wsdl" bindingName="{http://www.talend.org/service/}getLinesBinding" soapVersion="1_1" anonymous="optional" definition="http://193.239.192.237:8040/services/getLines?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://193.239.192.237:8040/services/getLines?wsdl"><con:part><con:url>http://193.239.192.237:8040/services/getLines?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="getLines" targetNamespace="http://www.talend.org/service/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.talend.org/service/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.talend.org/service/">
+      <xsd:element name="getLinesRequest">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Key" type="xsd:string"></xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="1" name="API" type="xsd:int"></xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="GtfsVersion" type="xsd:int"></xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Mode">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:enumeration value="All"/>
+                  <xsd:enumeration value="StopName"></xsd:enumeration>
+                  <xsd:enumeration value="StopID"></xsd:enumeration>
+                  <xsd:enumeration value="LocationName"></xsd:enumeration>
+                  <xsd:enumeration value="LocationID"/>
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="StopName" type="xsd:string"></xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="StopID" type="xsd:string"></xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="1" name="LocationID" type="xsd:string"></xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getLinesResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" name="State" type="tns:StateType"></xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="Line" type="tns:LineType"></xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="StateType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="State">
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:enumeration value="OK"/>
+                <xsd:enumeration value="NG"/>
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Info" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="LineType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="LineName" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="LineShortName" type="xsd:string"></xsd:element>
+          <xsd:element maxOccurs="1" minOccurs="1" name="LineID" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="LineColor" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="LinePicto" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getLinesResponse">
+    <wsdl:part element="tns:getLinesResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getLinesRequest">
+    <wsdl:part element="tns:getLinesRequest" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="getLines">
+    <wsdl:operation name="getLines">
+      <wsdl:input message="tns:getLinesRequest" name="getLinesRequest"></wsdl:input>
+      <wsdl:output message="tns:getLinesResponse" name="getLinesResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="getLinesBinding" type="tns:getLines">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getLines">
+      <soap:operation soapAction="http://www.talend.org/service/getLines"/>
+      <wsdl:input name="getLinesRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getLinesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="getLines">
+    <wsdl:port binding="tns:getLinesBinding" name="getLines">
+      <soap:address location="http://193.239.192.237:8040/services/getLines"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8090/services/getLines</con:endpoint><con:endpoint>http://193.239.192.237:8040/services/getLines</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://www.talend.org/service/getLines" name="getLines" bindingOperationName="getLines" type="Request-Response" inputName="getLinesRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional" outputName="getLinesResponse"><con:settings/><con:call name="All"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://193.239.192.237:8040/services/getLines</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://www.talend.org/service/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:getLinesRequest>
+         <Key>kGjGDgCWCUijXyExmQVvQ</Key>
+         <API>1</API>
+         <GtfsVersion>2</GtfsVersion>
+         <Mode>All</Mode>
+         <StopName></StopName>
+         <StopID></StopID>
+         <LocationID></LocationID>
+         <LocationName></LocationName>
+      </ser:getLinesRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.talend.org/service/getLines"/><con:wsrmConfig version="1.2"/></con:call><con:call name="StopName"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://193.239.192.237:8040/services/getLines</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://www.talend.org/service/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:getLinesRequest>
+         <Key>kGjGDgCWCUijXyExmQVvQ</Key>
+         <API>1</API>
+         <GtfsVersion>2</GtfsVersion>
+         <Mode>StopName</Mode>
+         <StopName>COMEDIE</StopName>
+      </ser:getLinesRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.talend.org/service/getLines"/><con:wsrmConfig version="1.2"/></con:call><con:call name="StopID"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://193.239.192.237:8040/services/getLines</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://www.talend.org/service/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:getLinesRequest>
+         <Key>kGjGDgCWCUijXyExmQVvQ</Key>
+         <API>1</API>
+         <GtfsVersion>2</GtfsVersion>
+         <Mode>StopID</Mode>
+         <StopID>1124</StopID>
+      </ser:getLinesRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.talend.org/service/getLines"/><con:wsrmConfig version="1.2"/></con:call><con:call name="LocationID"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://193.239.192.237:8040/services/getLines</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://www.talend.org/service/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:getLinesRequest>
+         <Key>kGjGDgCWCUijXyExmQVvQ</Key>
+         <API>1</API>
+         <GtfsVersion>2</GtfsVersion>
+         <Mode>LocationID</Mode>
+         <LocationID>S1225</LocationID>
+      </ser:getLinesRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.talend.org/service/getLines"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="getStopsBinding" type="wsdl" bindingName="{http://www.talend.org/service/}getStopsBinding" soapVersion="1_1" anonymous="optional" definition="http://193.239.192.237:8040/services/getStops?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://193.239.192.237:8040/services/getStops?wsdl"><con:part><con:url>http://193.239.192.237:8040/services/getStops?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="getStops" targetNamespace="http://www.talend.org/service/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.talend.org/service/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.talend.org/service/">
+      <xsd:element name="getStopsRequest">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Key" type="xsd:string"></xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="1" name="API" type="xsd:int"></xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="1" name="GtfsVersion" type="xsd:int"></xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Mode">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:enumeration value="All"/>
+                  <xsd:enumeration value="LineShortName"></xsd:enumeration>
+                  <xsd:enumeration value="LineName"/>
+                  <xsd:enumeration value="LineID"/>
+                  <xsd:enumeration value="Geo"/>
+                  <xsd:enumeration value="StopID"/>
+                  <xsd:enumeration value="StopName"/>
+                  <xsd:enumeration value="LocationID"/>
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="LineShortName" type="xsd:string"></xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="LineName" type="xsd:string"></xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="LineID" type="xsd:int"></xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Lat" type="xsd:double"></xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Lng" type="xsd:double"></xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Perimeter" type="xsd:int"></xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="StopID" type="xsd:string"></xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="StopName" type="xsd:string"></xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="LocationID" type="xsd:string"></xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getStopsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" name="State" type="tns:StateType"></xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="Station" type="tns:StopType"></xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="StateType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="State">
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:enumeration value="OK"/>
+                <xsd:enumeration value="NG"/>
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Info" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="StopType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="StopName" type="xsd:string"></xsd:element>
+          <xsd:element maxOccurs="1" minOccurs="1" name="StopID" type="xsd:string"></xsd:element>
+          <xsd:element maxOccurs="1" minOccurs="1" name="LocationID" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Distance" type="xsd:int"></xsd:element>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Lat" type="xsd:double"></xsd:element>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Lng" type="xsd:double"></xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getStopsRequest">
+    <wsdl:part element="tns:getStopsRequest" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getStopsResponse">
+    <wsdl:part element="tns:getStopsResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="getStops">
+    <wsdl:operation name="getStops">
+      <wsdl:input message="tns:getStopsRequest" name=""></wsdl:input>
+      <wsdl:output message="tns:getStopsResponse" name=""></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="getStopsBinding" type="tns:getStops">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getStops">
+      <soap:operation soapAction="http://www.talend.org/service/getStops"/>
+      <wsdl:input name="">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="getStops">
+    <wsdl:port binding="tns:getStopsBinding" name="getStops">
+      <soap:address location="http://193.239.192.237:8040/services/getStops"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8090/services/getStops</con:endpoint><con:endpoint>http://193.239.192.237:8040/services/getStops</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://www.talend.org/service/getStops" name="getStops" bindingOperationName="getStops" type="Request-Response" outputName="" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="All"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://193.239.192.237:8040/services/getStops</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://www.talend.org/service/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:getStopsRequest>
+         <Key>kGjGDgCWCUijXyExmQVvQ</Key>
+         <API>1</API>
+         <GtfsVersion>2</GtfsVersion>
+         <Mode>All</Mode>
+      </ser:getStopsRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.talend.org/service/getStops"/><con:wsrmConfig version="1.2"/></con:call><con:call name="LineShortName"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://193.239.192.237:8040/services/getStops</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://www.talend.org/service/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:getStopsRequest>
+         <Key>kGjGDgCWCUijXyExmQVvQ</Key>
+         <API>1</API>
+         <GtfsVersion>2</GtfsVersion>
+         <Mode>LineShortName</Mode>
+         <LineShortName>1</LineShortName>
+      </ser:getStopsRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.talend.org/service/getStops"/><con:wsrmConfig version="1.2"/></con:call><con:call name="LineName"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://193.239.192.237:8040/services/getStops</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://www.talend.org/service/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:getStopsRequest>
+         <Key>kGjGDgCWCUijXyExmQVvQ</Key>
+         <API>1</API>
+         <GtfsVersion>2</GtfsVersion>
+         <Mode>LineName</Mode>
+         <LineName>Mosson - Odysseum</LineName>
+      </ser:getStopsRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.talend.org/service/getStops"/><con:wsrmConfig version="1.2"/></con:call><con:call name="LineID"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://193.239.192.237:8040/services/getStops</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://www.talend.org/service/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:getStopsRequest>
+         <Key>kGjGDgCWCUijXyExmQVvQ</Key>
+         <API>1</API>
+         <GtfsVersion>2</GtfsVersion>
+         <Mode>LineID</Mode>
+         <LineID>5</LineID>
+      </ser:getStopsRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.talend.org/service/getStops"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Geo"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://193.239.192.237:8040/services/getStops</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://www.talend.org/service/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:getStopsRequest>
+         <Key>kGjGDgCWCUijXyExmQVvQ</Key>
+         <API>1</API>
+         <Mode>Geo</Mode>
+         <Lat>43.606029</Lat>
+         <Lng>3.876907</Lng>
+         <Perimeter>100</Perimeter>
+      </ser:getStopsRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.talend.org/service/getStops"/><con:wsrmConfig version="1.2"/></con:call><con:call name="StopID"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://193.239.192.237:8040/services/getStops</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://www.talend.org/service/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:getStopsRequest>
+         <Key>kGjGDgCWCUijXyExmQVvQ</Key>
+         <API>1</API>
+         <Mode>StopID</Mode>
+         <StopID>41223</StopID>
+      </ser:getStopsRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.talend.org/service/getStops"/><con:wsrmConfig version="1.2"/></con:call><con:call name="StopName"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://193.239.192.237:8040/services/getStops</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://www.talend.org/service/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:getStopsRequest>
+         <Key>kGjGDgCWCUijXyExmQVvQ</Key>
+         <API>1</API>
+         <Mode>StopName</Mode>
+         <StopName>Gare Saint-Roch</StopName>
+      </ser:getStopsRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.talend.org/service/getStops"/><con:wsrmConfig version="1.2"/></con:call><con:call name="LocationID"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://193.239.192.237:8040/services/getStops</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://www.talend.org/service/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:getStopsRequest>
+         <Key>kGjGDgCWCUijXyExmQVvQ</Key>
+         <API>1</API>
+         <Mode>LocationID</Mode>
+         <LocationID>S1225</LocationID>
+      </ser:getStopsRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.talend.org/service/getStops"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="getLocationsBinding" type="wsdl" bindingName="{http://www.talend.org/service/}getLocationsBinding" soapVersion="1_1" anonymous="optional" definition="http://193.239.192.237:8040/services/getLocations?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://193.239.192.237:8040/services/getLocations?wsdl"><con:part><con:url>http://193.239.192.237:8040/services/getLocations?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="getLocations" targetNamespace="http://www.talend.org/service/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.talend.org/service/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.talend.org/service/">
+      <xsd:element name="getLocationsRequest">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Key" type="xsd:string"></xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="1" name="API" type="xsd:int"></xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="1" name="GtfsVersion" type="xsd:int"></xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Mode">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:enumeration value="All"/>
+                  <xsd:enumeration value="LineShortName"></xsd:enumeration>
+                  <xsd:enumeration value="LineName"/>
+                  <xsd:enumeration value="LineID"/>
+                  <xsd:enumeration value="Geo"/>
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="LineShortName" type="xsd:string"></xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="LineName" type="xsd:string"></xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="LineID" type="xsd:int"></xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Lat" type="xsd:double"></xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Lng" type="xsd:double"></xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Perimeter" type="xsd:int"></xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="StopID" type="xsd:string"></xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="StopName" type="xsd:string"></xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="LocationID" type="xsd:string"></xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getLocationsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" name="State" type="tns:StateType"></xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="Location" type="tns:LocationType"></xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="StateType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="State">
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:enumeration value="OK"/>
+                <xsd:enumeration value="NG"/>
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Info" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="LocationType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="LocationID" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="LocationName" type="xsd:string"></xsd:element>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Distance" type="xsd:int"></xsd:element>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Lat" type="xsd:double"></xsd:element>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Lng" type="xsd:double"></xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getLocationsResponse">
+    <wsdl:part element="tns:getLocationsResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getLocationsRequest">
+    <wsdl:part element="tns:getLocationsRequest" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="getLocations">
+    <wsdl:operation name="getLocations">
+      <wsdl:input message="tns:getLocationsRequest" name=""></wsdl:input>
+      <wsdl:output message="tns:getLocationsResponse" name=""></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="getLocationsBinding" type="tns:getLocations">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getLocations">
+      <soap:operation soapAction="http://www.talend.org/service/getLocations"/>
+      <wsdl:input name="">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="getLocations">
+    <wsdl:port binding="tns:getLocationsBinding" name="getLocations">
+      <soap:address location="http://193.239.192.237:8040/services/getLocations"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8090/services/getLocations</con:endpoint><con:endpoint>http://193.239.192.237:8040/services/getLocations</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://www.talend.org/service/getLocations" name="getLocations" bindingOperationName="getLocations" type="Request-Response" outputName="" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="All"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://193.239.192.237:8040/services/getLocations</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://www.talend.org/service/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:getLocationsRequest>
+         <Key>kGjGDgCWCUijXyExmQVvQ</Key>
+         <API>1</API>
+         <GtfsVersion>2</GtfsVersion>
+         <Mode>All</Mode>
+      </ser:getLocationsRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.talend.org/service/getLocations"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Geo"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://193.239.192.237:8040/services/getLocations</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://www.talend.org/service/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:getLocationsRequest>
+         <Key>kGjGDgCWCUijXyExmQVvQ</Key>
+         <API>1</API>
+         <GtfsVersion>2</GtfsVersion>
+         <Mode>Geo</Mode>
+         <Lat>43.606029</Lat>
+         <Lng>3.876907</Lng>
+         <Perimeter>100</Perimeter>      
+      </ser:getLocationsRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.talend.org/service/getLocations"/><con:wsrmConfig version="1.2"/></con:call><con:call name="LineID"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://193.239.192.237:8040/services/getLocations</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://www.talend.org/service/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:getLocationsRequest>
+         <Key>kGjGDgCWCUijXyExmQVvQ</Key>
+         <API>1</API>
+         <GtfsVersion>2</GtfsVersion>
+         <Mode>LineID</Mode>
+         <LineID>5</LineID> 
+      </ser:getLocationsRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.talend.org/service/getLocations"/><con:wsrmConfig version="1.2"/></con:call><con:call name="LineName"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://193.239.192.237:8040/services/getLocations</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://www.talend.org/service/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:getLocationsRequest>
+         <Key>kGjGDgCWCUijXyExmQVvQ</Key>
+         <API>1</API>
+         <GtfsVersion>2</GtfsVersion>
+         <Mode>LineName</Mode>
+         <LineName>Mosson - Odysseum</LineName>
+      </ser:getLocationsRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.talend.org/service/getLocations"/><con:wsrmConfig version="1.2"/></con:call><con:call name="LineShortName"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://193.239.192.237:8040/services/getLocations</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://www.talend.org/service/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:getLocationsRequest>
+         <Key>kGjGDgCWCUijXyExmQVvQ</Key>
+         <API>1</API>
+         <GtfsVersion>2</GtfsVersion>
+         <Mode>LineShortName</Mode>
+         <LineShortName>1</LineShortName>
+      </ser:getLocationsRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.talend.org/service/getLocations"/><con:wsrmConfig version="1.2"/></con:call><con:call name="LocationID"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://193.239.192.237:8040/services/getLocations</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://www.talend.org/service/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:getLocationsRequest>
+         <Key>kGjGDgCWCUijXyExmQVvQ</Key>
+         <API>1</API>
+         <GtfsVersion>2</GtfsVersion>
+         <Mode>LocationID</Mode>
+         <LocationID>S1225</LocationID>
+      </ser:getLocationsRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.talend.org/service/getLocations"/><con:wsrmConfig version="1.2"/></con:call><con:call name="StopID"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://193.239.192.237:8040/services/getLocations</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://www.talend.org/service/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:getLocationsRequest>
+         <Key>kGjGDgCWCUijXyExmQVvQ</Key>
+         <API>1</API>
+         <Mode>StopID</Mode>
+         <StopID>1</StopID>
+      </ser:getLocationsRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.talend.org/service/getLocations"/><con:wsrmConfig version="1.2"/></con:call><con:call name="StopName"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://193.239.192.237:8040/services/getLocations</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://www.talend.org/service/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:getLocationsRequest>
+         <Key>kGjGDgCWCUijXyExmQVvQ</Key>
+         <API>1</API>
+         <Mode>StopName</Mode>
+         <StopName>Gare Saint-Roch</StopName>
+      </ser:getLocationsRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.talend.org/service/getLocations"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="getDeparturesBinding" type="wsdl" bindingName="{http://www.talend.org/service/}getDeparturesBinding" soapVersion="1_1" anonymous="optional" definition="http://193.239.192.237:8040/services/getDepartures?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://193.239.192.237:8040/services/getDepartures?wsdl"><con:part><con:url>http://193.239.192.237:8040/services/getDepartures?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="getDepartures" targetNamespace="http://www.talend.org/service/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.talend.org/service/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.talend.org/service/">
+      <xsd:element name="getDeparturesRequest">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Key" type="xsd:string"></xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="1" name="API" type="xsd:int"></xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="GtfsVersion" type="xsd:int"></xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Mode">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:enumeration value="Next"/>
+                  <xsd:enumeration value="First"/>
+                  <xsd:enumeration value="Last"/>
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Level">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:enumeration value="Location"/>
+                  <xsd:enumeration value="Stop"/>
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="1" name="StopID" type="xsd:string"></xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="LocationID" type="xsd:string"></xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="LineID" type="xsd:int"></xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="DateTimeNext" type="xsd:dateTime"></xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="DateFirst" type="xsd:date"></xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="DateLast" type="xsd:date"></xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="NbResult" type="xsd:int"></xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getDeparturesResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" name="State" type="tns:StateType"></xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="Departure" type="tns:DepartureType"></xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="StateType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="State">
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:enumeration value="OK"/>
+                <xsd:enumeration value="NG"/>
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Info" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DepartureType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="LineID" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="LineShortName" type="xsd:string"></xsd:element>
+          <xsd:element maxOccurs="1" minOccurs="1" name="LineName" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="LineColor" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="LinePicto" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="Direction" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="LocationDestinationID" type="xsd:string"></xsd:element>
+          <xsd:element maxOccurs="1" minOccurs="1" name="LocationDestinationName" type="xsd:string"></xsd:element>
+          <xsd:element maxOccurs="1" minOccurs="1" name="DateTime" type="xsd:dateTime"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getDeparturesResponse">
+    <wsdl:part element="tns:getDeparturesResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDeparturesRequest">
+    <wsdl:part element="tns:getDeparturesRequest" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="getDepartures">
+    <wsdl:operation name="getDepartures">
+      <wsdl:input message="tns:getDeparturesRequest"></wsdl:input>
+      <wsdl:output message="tns:getDeparturesResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="getDeparturesBinding" type="tns:getDepartures">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getDepartures">
+      <soap:operation soapAction="http://www.talend.org/service/getDepartures"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="getDepartures">
+    <wsdl:port binding="tns:getDeparturesBinding" name="getDepartures">
+      <soap:address location="http://193.239.192.237:8040/services/getDepartures"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8090/services/getDepartures</con:endpoint><con:endpoint>http://193.239.192.237/services/getDepartures</con:endpoint><con:endpoint>http://193.239.192.237:8090/services/getDepartures</con:endpoint><con:endpoint>http://193.239.192.237:8040/services/getDepartures</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://www.talend.org/service/getDepartures" name="getDepartures" bindingOperationName="getDepartures" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Next - Stop"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://193.239.192.237:8040/services/getDepartures</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://www.talend.org/service/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:getDeparturesRequest>
+         <Key>kGjGDgCWCUijXyExmQVvQ</Key>
+         <API>1</API>
+         <GtfsVersion>2</GtfsVersion>
+         <Mode>Next</Mode>
+         <Level>Stop</Level>
+         <StopID>1</StopID>
+         <NbResult>2</NbResult>
+      </ser:getDeparturesRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.talend.org/service/getDepartures"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Next - Stop - with Date"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://193.239.192.237:8040/services/getDepartures</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://www.talend.org/service/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:getDeparturesRequest>
+         <Key>kGjGDgCWCUijXyExmQVvQ</Key>
+         <API>1</API>
+         <GtfsVersion>2</GtfsVersion>
+         <Mode>Next</Mode>
+         <Level>Stop</Level>
+         <StopID>1</StopID>
+         <DateTimeNext>2013-08-20T10:30:00</DateTimeNext>
+      </ser:getDeparturesRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.talend.org/service/getDepartures"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Next - Location"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://193.239.192.237:8040/services/getDepartures</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://www.talend.org/service/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:getDeparturesRequest>
+         <Key>kGjGDgCWCUijXyExmQVvQ</Key>
+         <API>1</API>
+         <GtfsVersion>2</GtfsVersion>
+         <Mode>Next</Mode>
+         <Level>Location</Level>
+         <LocationID>S1225</LocationID>
+         <NbResult>2</NbResult>
+      </ser:getDeparturesRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.talend.org/service/getDepartures"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Next - Location - with Date"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://193.239.192.237:8040/services/getDepartures</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://www.talend.org/service/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:getDeparturesRequest>
+         <Key>kGjGDgCWCUijXyExmQVvQ</Key>
+         <API>1</API>
+         <GtfsVersion>2</GtfsVersion>
+         <Mode>Next</Mode>
+         <Level>Location</Level>
+         <LocationID>S1225</LocationID>
+         <DateTimeNext>2013-08-25T10:30:00</DateTimeNext>
+      </ser:getDeparturesRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.talend.org/service/getDepartures"/><con:wsrmConfig version="1.2"/></con:call><con:call name="First - Stop"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://193.239.192.237:8040/services/getDepartures</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://www.talend.org/service/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:getDeparturesRequest>
+         <Key>kGjGDgCWCUijXyExmQVvQ</Key>
+         <API>1</API>
+         <GtfsVersion>2</GtfsVersion>
+         <Mode>First</Mode>
+         <Level>Stop</Level>
+         <StopID>1</StopID>
+      </ser:getDeparturesRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.talend.org/service/getDepartures"/><con:wsrmConfig version="1.2"/></con:call><con:call name="First - Stop - with Date"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://193.239.192.237:8040/services/getDepartures</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://www.talend.org/service/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:getDeparturesRequest>
+         <Key>kGjGDgCWCUijXyExmQVvQ</Key>
+         <API>1</API>
+         <GtfsVersion>2</GtfsVersion>
+         <Mode>First</Mode>
+         <Level>Stop</Level>
+         <StopID>1</StopID>
+         <DateFirst>2013-08-20</DateFirst>
+      </ser:getDeparturesRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.talend.org/service/getDepartures"/><con:wsrmConfig version="1.2"/></con:call><con:call name="First - Location"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://193.239.192.237:8040/services/getDepartures</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://www.talend.org/service/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:getDeparturesRequest>
+         <Key>kGjGDgCWCUijXyExmQVvQ</Key>
+         <API>1</API>
+         <GtfsVersion>2</GtfsVersion>
+         <Mode>First</Mode>
+         <Level>Location</Level>
+         <LocationID>S1225</LocationID>
+      </ser:getDeparturesRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.talend.org/service/getDepartures"/><con:wsrmConfig version="1.2"/></con:call><con:call name="First - Location - with Date"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://193.239.192.237:8040/services/getDepartures</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://www.talend.org/service/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:getDeparturesRequest>
+         <Key>kGjGDgCWCUijXyExmQVvQ</Key>
+         <API>1</API>
+         <GtfsVersion>2</GtfsVersion>
+         <Mode>First</Mode>
+         <Level>Location</Level>
+         <LocationID>S1225</LocationID>
+         <DateFirst>2013-08-24</DateFirst>
+      </ser:getDeparturesRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.talend.org/service/getDepartures"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Last - Location"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://193.239.192.237:8040/services/getDepartures</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://www.talend.org/service/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:getDeparturesRequest>
+         <Key>kGjGDgCWCUijXyExmQVvQ</Key>
+         <API>1</API>
+         <GtfsVersion>2</GtfsVersion>
+         <Mode>Last</Mode>
+         <Level>Location</Level>
+         <LocationID>S1225</LocationID>
+      </ser:getDeparturesRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.talend.org/service/getDepartures"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Last - Location - with Date"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://193.239.192.237:8040/services/getDepartures</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://www.talend.org/service/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:getDeparturesRequest>
+         <Key>kGjGDgCWCUijXyExmQVvQ</Key>
+         <API>1</API>
+         <GtfsVersion>2</GtfsVersion>
+         <Mode>Last</Mode>
+         <Level>Location</Level>
+         <LocationID>S1225</LocationID>
+         <DateLast>2013-08-30</DateLast>
+      </ser:getDeparturesRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.talend.org/service/getDepartures"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Last - Stop"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://193.239.192.237:8040/services/getDepartures</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://www.talend.org/service/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:getDeparturesRequest>
+         <Key>kGjGDgCWCUijXyExmQVvQ</Key>
+         <API>1</API>
+         <GtfsVersion>2</GtfsVersion>
+         <Mode>Last</Mode>
+         <Level>Stop</Level>
+         <StopID>1</StopID>
+      </ser:getDeparturesRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.talend.org/service/getDepartures"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Last - Stop - with Date"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://193.239.192.237:8040/services/getDepartures</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://www.talend.org/service/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:getDeparturesRequest>
+         <Key>kGjGDgCWCUijXyExmQVvQ</Key>
+         <API>1</API>
+         <GtfsVersion>2</GtfsVersion>
+         <Mode>Last</Mode>
+         <Level>Stop</Level>
+         <StopID>1125</StopID>
+         <DateLast>2013-08-20</DateLast>
+      </ser:getDeparturesRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.talend.org/service/getDepartures"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Next - Stop - with Date - 23H59"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://193.239.192.237:8040/services/getDepartures</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://www.talend.org/service/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:getDeparturesRequest>
+         <Key>kGjGDgCWCUijXyExmQVvQ</Key>
+         <API>1</API>
+         <GtfsVersion>2</GtfsVersion>
+         <Mode>Next</Mode>
+         <Level>Stop</Level>
+         <StopID>1225</StopID>
+         <DateTimeNext>2013-08-20T23:59:00</DateTimeNext>
+      </ser:getDeparturesRequest>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.talend.org/service/getDepartures"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Next - Stop - with Date - 00H01"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://193.239.192.237:8040/services/getDepartures</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://www.talend.org/service/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:getDeparturesRequest>
+         <Key>kGjGDgCWCUijXyExmQVvQ</Key>
+         <API>1</API>
+         <GtfsVersion>2</GtfsVersion>
+         <Mode>Next</Mode>
+         <Level>Stop</Level>
+         <StopID>1225</StopID>
+         <DateTimeNext>2013-08-21T00:01:00</DateTimeNext>
+      </ser:getDeparturesRequest>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.talend.org/service/getDepartures"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="getDeparturesRealTimeBinding" type="wsdl" bindingName="{http://www.talend.org/service/}getDeparturesRealTimeBinding" soapVersion="1_1" anonymous="optional" definition="http://193.239.192.237:8040/services/getDeparturesRealTime?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://193.239.192.237:8040/services/getDeparturesRealTime?wsdl"><con:part><con:url>http://193.239.192.237:8040/services/getDeparturesRealTime?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="getDeparturesRealTime" targetNamespace="http://www.talend.org/service/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.talend.org/service/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.talend.org/service/">
+      <xsd:element name="getDeparturesRealTimeRequest">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Key" type="xsd:string"></xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="1" name="API" type="xsd:int"></xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="1" name="StopID" type="xsd:string"></xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="LineID" type="xsd:int"></xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getDeparturesRealTimeResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" name="State" type="tns:StateType"></xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="Departure" type="tns:DepartureType"></xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="StateType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="State">
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:enumeration value="OK"/>
+                <xsd:enumeration value="NG"/>
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Info" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DepartureType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="LineID" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="LineShortName" type="xsd:string"></xsd:element>
+          <xsd:element maxOccurs="1" minOccurs="1" name="LineName" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="LineColor" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="LinePicto" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="Direction" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="LocationDestinationID" type="xsd:string"></xsd:element>
+          <xsd:element maxOccurs="1" minOccurs="1" name="LocationDestinationName" type="xsd:string"></xsd:element>
+          <xsd:element maxOccurs="1" minOccurs="1" name="DateTime" type="xsd:dateTime"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getDeparturesRealTimeResponse">
+    <wsdl:part element="tns:getDeparturesRealTimeResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDeparturesRealTimeRequest">
+    <wsdl:part element="tns:getDeparturesRealTimeRequest" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="getDeparturesRealTime">
+    <wsdl:operation name="getDeparturesRealTime">
+      <wsdl:input message="tns:getDeparturesRealTimeRequest"></wsdl:input>
+      <wsdl:output message="tns:getDeparturesRealTimeResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="getDeparturesRealTimeBinding" type="tns:getDeparturesRealTime">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getDeparturesRealTime">
+      <soap:operation soapAction="http://www.talend.org/service/getDeparturesRealTime"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="getDeparturesRealTime">
+    <wsdl:port binding="tns:getDeparturesRealTimeBinding" name="getDeparturesRealTime">
+      <soap:address location="http://193.239.192.237:8040/services/getDeparturesRealTime"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8090/services/getDeparturesRealTime</con:endpoint><con:endpoint>http://193.239.192.237:8040/services/getDeparturesRealTime</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://www.talend.org/service/getDeparturesRealTime" name="getDeparturesRealTime" bindingOperationName="getDeparturesRealTime" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="StopID"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://193.239.192.237:8040/services/getDeparturesRealTime</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://www.talend.org/service/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:getDeparturesRealTimeRequest>
+         <Key>kGjGDgCWCUijXyExmQVvQ</Key>
+         <API>1</API>
+         <StopID>41223</StopID>
+      </ser:getDeparturesRealTimeRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.talend.org/service/getDeparturesRealTime"/><con:wsrmConfig version="1.2"/></con:call><con:call name="StopID - Line ID"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://193.239.192.237:8040/services/getDeparturesRealTime</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://www.talend.org/service/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:getDeparturesRealTimeRequest>
+         <Key>kGjGDgCWCUijXyExmQVvQ</Key>
+         <API>1</API>
+         <StopID>17</StopID>
+         <LineID>35</LineID>
+      </ser:getDeparturesRealTimeRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.talend.org/service/getDeparturesRealTime"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="getParkingBinding" type="wsdl" bindingName="{http://www.talend.org/service/}getParkingBinding" soapVersion="1_1" anonymous="optional" definition="http://193.239.192.237:8040/services/getParking?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://193.239.192.237:8040/services/getParking?wsdl"><con:part><con:url>http://193.239.192.237:8040/services/getParking?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="getParking" targetNamespace="http://www.talend.org/service/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.talend.org/service/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.talend.org/service/">
+      <xsd:element name="getParkingRequest">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Key" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="API" type="xsd:int"></xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getParkingResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" name="State" type="tns:StateType"></xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="Parking" type="tns:ParkingType"></xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="StateType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="State">
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:enumeration value="OK"/>
+                <xsd:enumeration value="NG"/>
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Info" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ParkingType">
+        <xsd:sequence>
+          <xsd:element name="ID" type="xsd:int"/>
+          <xsd:element name="Name" type="xsd:string"/>
+          <xsd:element name="Type" type="xsd:int"/>
+          <xsd:element name="Lat" type="xsd:double"/>
+          <xsd:element name="Lng" type="xsd:double"/>
+          <xsd:element name="SpotsAvailable" type="xsd:int"></xsd:element>
+          <xsd:element name="Capacity" type="xsd:int"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getParkingResponse">
+    <wsdl:part element="tns:getParkingResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getParkingRequest">
+    <wsdl:part element="tns:getParkingRequest" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="getParking">
+    <wsdl:operation name="getParking">
+      <wsdl:input message="tns:getParkingRequest"></wsdl:input>
+      <wsdl:output message="tns:getParkingResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="getParkingBinding" type="tns:getParking">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getParking">
+      <soap:operation soapAction="http://www.talend.org/service/getParking"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="getParking">
+    <wsdl:port binding="tns:getParkingBinding" name="getParking">
+      <soap:address location="http://193.239.192.237:8040/services/getParking"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://193.239.192.237:8040/services/getParking</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://www.talend.org/service/getParking" name="getParking" bindingOperationName="getParking" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://193.239.192.237:8040/services/getParking</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://www.talend.org/service/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:getParkingRequest>
+         <Key>kGjGDgCWCUijXyExmQVvQ</Key>
+         <API>1</API>
+      </ser:getParkingRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.talend.org/service/getParking"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="getBikeStationsBinding" type="wsdl" bindingName="{http://www.talend.org/service/}getBikeStationsBinding" soapVersion="1_1" anonymous="optional" definition="http://193.239.192.237:8040/services/getBikeStations?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://193.239.192.237:8040/services/getBikeStations?wsdl"><con:part><con:url>http://193.239.192.237:8040/services/getBikeStations?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="getBikeStations" targetNamespace="http://www.talend.org/service/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.talend.org/service/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.talend.org/service/">
+      <xsd:element name="getBikeStationsRequest">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Key" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="API" type="xsd:int"></xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getBikeStationsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" name="State" type="tns:StateType"></xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="Station" type="tns:StationType"></xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="StateType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="State">
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:enumeration value="OK"/>
+                <xsd:enumeration value="NG"/>
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Info" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="StationType">
+        <xsd:sequence>
+          <xsd:element name="ID" type="xsd:int"/>
+          <xsd:element name="Name" type="xsd:string"/>
+          <xsd:element name="City" type="xsd:string"/>
+          <xsd:element name="Lat" type="xsd:double"/>
+          <xsd:element name="Lng" type="xsd:double"/>
+          <xsd:element name="CB" type="xsd:int"/>
+          <xsd:element name="SlotsTotal" type="xsd:int"/>
+          <xsd:element name="BikesAvailable" type="xsd:int"></xsd:element>
+          <xsd:element name="SlotsAvailable" type="xsd:int"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getBikeStationsRequest">
+    <wsdl:part element="tns:getBikeStationsRequest" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getBikeStationsResponse">
+    <wsdl:part element="tns:getBikeStationsResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="getBikeStations">
+    <wsdl:operation name="getBikeStations">
+      <wsdl:input message="tns:getBikeStationsRequest"></wsdl:input>
+      <wsdl:output message="tns:getBikeStationsResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="getBikeStationsBinding" type="tns:getBikeStations">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getBikeStations">
+      <soap:operation soapAction="http://www.talend.org/service/getBikeStations"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="getBikeStations">
+    <wsdl:port binding="tns:getBikeStationsBinding" name="getBikeStations">
+      <soap:address location="http://193.239.192.237:8040/services/getBikeStations"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://193.239.192.237:8040/services/getBikeStations</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://www.talend.org/service/getBikeStations" name="getBikeStations" bindingOperationName="getBikeStations" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://193.239.192.237:8040/services/getBikeStations</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://www.talend.org/service/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:getBikeStationsRequest>
+         <Key>kGjGDgCWCUijXyExmQVvQ</Key>
+         <API>1</API>
+      </ser:getBikeStationsRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.talend.org/service/getBikeStations"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:sensitiveInformation/></con:soapui-project>
