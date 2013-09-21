@@ -1,0 +1,159 @@
+.box-small {
+	text-align: center;
+	position: relative;
+	display: block;
+	margin: 20px;
+
+}
+
+.box-small-link {
+	border: 1px solid #ddd;
+	margin-bottom: -1px;
+  	padding: 30px 0px;
+	font-size: 26px;
+  	background-color: #fafafa;
+  	background-image: -moz-linear-gradient(top, #fafafa, #efefef);
+  	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fafafa), to(#efefef));
+  	background-image: -webkit-linear-gradient(top, #fafafa, #efefef);
+  	background-image: -o-linear-gradient(top, #fafafa, #efefef);
+  	background-image: linear-gradient(to bottom, #fafafa, #efefef);
+  	filter: progid:dximagetransform.microsoft.gradient(startColorstr='#fafafa', endColorstr='#efefef', GradientType=0);
+  	-webkit-box-shadow: none;
+       -moz-box-shadow: none;
+          	box-shadow: none;
+  	-webkit-border-radius: 2px;
+       -moz-border-radius: 2px;
+          	border-radius: 2px;
+	display:block;
+	color: #646464;
+	text-shadow: 0px 1px 1px #fff;
+}
+
+.box-small-link:hover {
+	border: 1px solid #3c4049;
+	margin-bottom: -1px;
+  	padding: 30px 0px;
+  	color: #fff;
+  	background-color: #4e525d;
+  	background-image: -moz-linear-gradient(top, #4e525d, #3c4049);
+  	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#4e525d), to(#3c4049));
+  	background-image: -webkit-linear-gradient(top, #4e525d, #3c4049);
+  	background-image: -o-linear-gradient(top, #4e525d, #3c4049);
+  	background-image: linear-gradient(to bottom, #4e525d, #3c4049);
+  	filter: progid:dximagetransform.microsoft.gradient(startColorstr='#4e525d', endColorstr='#3c4049', GradientType=0);
+	text-shadow: 0px 1px 1px #000;
+	text-decoration: none;
+}
+
+.box-small-title {
+	text-align: center;
+	margin: 10px auto;
+	font-size: 16px;
+	color: #aaa;
+	text-shadow: 0px 1px 1px #fff;
+}
+
+
+.notification {
+	position: absolute;
+	top: -16px;
+	right: -16px;
+	line-height: 16px;
+	height: 16px;
+	padding: 6px 10px;
+	color: white !important;
+	text-shadow: 0 1px hsla(0, 0%, 0%, 0.25);
+	border-width: 1px;
+	border-style: solid;
+	border-radius: 10px;
+  	-webkit-border-radius: 50em;
+       -moz-border-radius: 50em;
+          	border-radius: 50em;
+	-webkit-box-shadow: 0 1px 1px hsla(0, 0%, 0%, 0.08), inset 0 1px hsla(0, 100%, 100%, 0.3);
+	   -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08), inset 0 1px rgba(255, 255, 255, 0.3);
+			box-shadow: 0 1px 1px hsla(0, 0%, 0%, 0.08), inset 0 1px hsla(0, 100%, 100%, 0.3);
+}
+
+.notification2 {
+	position: absolute;
+	top: -16px;
+	right: 140px;
+	line-height: 16px;
+	height: 16px;
+	padding: 6px 10px;
+	color: white !important;
+	text-shadow: 0 1px hsla(0, 0%, 0%, 0.25);
+	border-width: 1px;
+	border-style: solid;
+	border-radius: 10px;
+  	-webkit-border-radius: 50em;
+       -moz-border-radius: 50em;
+          	border-radius: 50em;
+	-webkit-box-shadow: 0 1px 1px hsla(0, 0%, 0%, 0.08), inset 0 1px hsla(0, 100%, 100%, 0.3);
+	   -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08), inset 0 1px rgba(255, 255, 255, 0.3);
+			box-shadow: 0 1px 1px hsla(0, 0%, 0%, 0.08), inset 0 1px hsla(0, 100%, 100%, 0.3);
+}
+
+.notification-small {
+	padding: 2px 7px;
+	color: white !important;
+	text-shadow: 0 1px hsla(0, 0%, 0%, 0.25);
+	border-width: 1px;
+	border-style: solid;
+  	-webkit-border-radius: 50em;
+       -moz-border-radius: 50em;
+          	border-radius: 50em;
+	-webkit-box-shadow: 0 1px 1px hsla(0, 0%, 0%, 0.08), inset 0 1px hsla(0, 100%, 100%, 0.3);
+	   -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08), inset 0 1px rgba(255, 255, 255, 0.3);
+			box-shadow: 0 1px 1px hsla(0, 0%, 0%, 0.08), inset 0 1px hsla(0, 100%, 100%, 0.3);
+}
+
+.notification-small, 
+.notification,
+.notification2{
+	border-color: #2FABE9;
+	background-color: #67C2EF;
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, hsl(200, 80%, 82%)), color-stop(100%, hsl(200, 81%, 67%)));
+	background-image: -webkit-linear-gradient(top, hsl(200, 80%, 82%), hsl(200, 81%, 67%));
+	background-image: -moz-linear-gradient(top, hsl(200, 80%, 82%), hsl(200, 81%, 67%));
+	background-image: -ms-linear-gradient(top, hsl(200, 80%, 82%), hsl(200, 81%, 67%));
+	background-image: -o-linear-gradient(top, hsl(200, 80%, 82%), hsl(200, 81%, 67%));
+	background-image: linear-gradient(top, hsl(200, 80%, 82%), hsl(200, 81%, 67%));
+}
+
+.notification-small.green,
+.notification.green {
+	border-color: 	#5AAD34;
+	background-color: 	#78CD51;
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, hsl(101, 54%, 71%)), color-stop(100%, hsl(101, 55%, 56%)));
+	background-image: -webkit-linear-gradient(top, hsl(101, 54%, 71%), hsl(101, 55%, 56%));
+	background-image: -moz-linear-gradient(top, hsl(101, 54%, 71%), hsl(101, 55%, 56%));
+	background-image: -ms-linear-gradient(top, hsl(101, 54%, 71%), hsl(101, 55%, 56%));
+	background-image: -o-linear-gradient(top, hsl(101, 54%, 71%), hsl(101, 55%, 56%));
+	background-image: linear-gradient(top, 	hsl(101, 54%, 71%), hsl(101, 55%, 56%));
+}
+
+.notification-small.yellow,
+.notification.yellow {
+	border-color: #F4A506;
+	background-color: #FABB3D;
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, hsl(40, 95%, 76%)), color-stop(100%, hsl(40, 95%, 61%)));
+	background-image: -webkit-linear-gradient(top, hsl(40, 95%, 76%), hsl(40, 95%, 61%));
+	background-image: -moz-linear-gradient(top, hsl(40, 95%, 76%), hsl(40, 95%, 61%));
+	background-image: -ms-linear-gradient(top, hsl(40, 95%, 76%), hsl(40, 95%, 61%));
+	background-image: -o-linear-gradient(top, hsl(40, 95%, 76%), hsl(40, 95%, 61%));
+	background-image: linear-gradient(top, hsl(40, 95%, 76%), hsl(40, 95%, 61%));
+}
+
+.notification-small.red,
+.notification.red,
+.notification2.red {
+	border-color: #FA5833;
+	background-color: #FA603D;
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, hsl(11, 95%, 76%)), color-stop(100%, hsl(11, 95%, 61%)));
+	background-image: -webkit-linear-gradient(top, hsl(11, 95%, 76%), hsl(11, 95%, 61%));
+	background-image: -moz-linear-gradient(top, hsl(11, 95%, 76%), hsl(11, 95%, 61%));
+	background-image: -ms-linear-gradient(top, hsl(11, 95%, 76%), hsl(11, 95%, 61%));
+	background-image: -o-linear-gradient(top, hsl(11, 95%, 76%), hsl(11, 95%, 61%));
+	background-image: linear-gradient(top, hsl(11, 95%, 76%), hsl(11, 95%, 61%));
+}
