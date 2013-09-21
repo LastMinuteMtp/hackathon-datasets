@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.talend.org/service/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="getLines" targetNamespace="http://www.talend.org/service/">
+  <wsdl:types>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.talend.org/service/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://www.talend.org/service/">
+			<xsd:element name="getLinesRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="Key" type="xsd:string">
+						</xsd:element>
+						<xsd:element maxOccurs="1" minOccurs="1" name="API" type="xsd:int">
+						</xsd:element>
+						<xsd:element maxOccurs="1" minOccurs="0" name="GtfsVersion" type="xsd:int">
+						</xsd:element>
+						<xsd:element maxOccurs="1" minOccurs="1" name="Mode">
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:enumeration value="All"/>
+									<xsd:enumeration value="StopName">
+									</xsd:enumeration>
+									<xsd:enumeration value="StopID">
+									</xsd:enumeration>
+									<xsd:enumeration value="LocationName">
+									</xsd:enumeration>
+									<xsd:enumeration value="LocationID"/>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+						<xsd:element maxOccurs="1" minOccurs="0" name="StopName" type="xsd:string">
+						</xsd:element>
+						<xsd:element maxOccurs="1" minOccurs="0" name="StopID" type="xsd:string">
+						</xsd:element>
+
+                        <xsd:element maxOccurs="1" minOccurs="1" name="LocationID" type="xsd:string">
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getLinesResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="State" type="tns:StateType">
+						</xsd:element>
+						<xsd:element maxOccurs="unbounded" minOccurs="0" name="Line" type="tns:LineType">
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		
+			<xsd:complexType name="StateType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="State">
+						<xsd:simpleType>
+							<xsd:restriction base="xsd:string">
+								<xsd:enumeration value="OK"/>
+								<xsd:enumeration value="NG"/>
+							</xsd:restriction>
+						</xsd:simpleType>
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="0" name="Info" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		
+			<xsd:complexType name="LineType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="LineName" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="1" name="LineShortName" type="xsd:string">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="LineID" type="xsd:int"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="LineColor" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="LinePicto" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getLinesResponse">
+    <wsdl:part element="tns:getLinesResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getLinesRequest">
+    <wsdl:part element="tns:getLinesRequest" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="getLines">
+    <wsdl:operation name="getLines">
+      <wsdl:input message="tns:getLinesRequest" name="getLinesRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:getLinesResponse" name="getLinesResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="getLinesBinding" type="tns:getLines">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getLines">
+      <soap:operation soapAction="http://www.talend.org/service/getLines"/>
+      <wsdl:input name="getLinesRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getLinesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="getLines">
+    <wsdl:port binding="tns:getLinesBinding" name="getLines">
+      <soap:address location="http://193.239.192.237:8040/services/getLines"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.talend.org/service/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="getDeparturesRealTime" targetNamespace="http://www.talend.org/service/">
+  <wsdl:types>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.talend.org/service/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://www.talend.org/service/">
+			<xsd:element name="getDeparturesRealTimeRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="Key" type="xsd:string">
+						</xsd:element>
+						<xsd:element maxOccurs="1" minOccurs="1" name="API" type="xsd:int">
+						</xsd:element>
+
+
+
+						<xsd:element maxOccurs="1" minOccurs="1" name="StopID" type="xsd:string">
+						</xsd:element>
+
+						<xsd:element maxOccurs="1" minOccurs="0" name="LineID" type="xsd:int">
+						</xsd:element>
+
+
+
+
+
+                    </xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getDeparturesRealTimeResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="State" type="tns:StateType">
+						</xsd:element>
+						<xsd:element maxOccurs="unbounded" minOccurs="0" name="Departure" type="tns:DepartureType">
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		
+			<xsd:complexType name="StateType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="State">
+						<xsd:simpleType>
+							<xsd:restriction base="xsd:string">
+								<xsd:enumeration value="OK"/>
+								<xsd:enumeration value="NG"/>
+							</xsd:restriction>
+						</xsd:simpleType>
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="0" name="Info" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		
+			<xsd:complexType name="DepartureType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="LineID" type="xsd:int"/>
+					<xsd:element maxOccurs="1" minOccurs="1" name="LineShortName" type="xsd:string">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="LineName" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="LineColor" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="LinePicto" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="1" name="Direction" type="xsd:int"/>
+					<xsd:element maxOccurs="1" minOccurs="1" name="LocationDestinationID" type="xsd:string">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="LocationDestinationName" type="xsd:string">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="DateTime" type="xsd:dateTime"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getDeparturesRealTimeResponse">
+    <wsdl:part element="tns:getDeparturesRealTimeResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDeparturesRealTimeRequest">
+    <wsdl:part element="tns:getDeparturesRealTimeRequest" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="getDeparturesRealTime">
+    <wsdl:operation name="getDeparturesRealTime">
+      <wsdl:input message="tns:getDeparturesRealTimeRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:getDeparturesRealTimeResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="getDeparturesRealTimeBinding" type="tns:getDeparturesRealTime">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getDeparturesRealTime">
+      <soap:operation soapAction="http://www.talend.org/service/getDeparturesRealTime"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="getDeparturesRealTime">
+    <wsdl:port binding="tns:getDeparturesRealTimeBinding" name="getDeparturesRealTime">
+      <soap:address location="http://193.239.192.237:8040/services/getDeparturesRealTime"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

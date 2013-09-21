@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.talend.org/service/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="getGTFS" targetNamespace="http://www.talend.org/service/">
+  <wsdl:types>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.talend.org/service/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://www.talend.org/service/">
+			<xsd:element name="getGTFSRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="Key" type="xsd:string">
+						</xsd:element>
+						<xsd:element maxOccurs="1" minOccurs="1" name="API" type="xsd:int">
+						</xsd:element>
+						<xsd:element maxOccurs="1" minOccurs="0" name="Version" type="xsd:int">
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getGTFSResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="State" type="tns:StateType">
+						</xsd:element>
+						<xsd:element maxOccurs="unbounded" minOccurs="0" name="GTFS" type="tns:GTFSType">
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		
+			<xsd:complexType name="StateType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="State">
+						<xsd:simpleType>
+							<xsd:restriction base="xsd:string">
+								<xsd:enumeration value="OK"/>
+								<xsd:enumeration value="NG"/>
+							</xsd:restriction>
+						</xsd:simpleType>
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="0" name="Info" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		
+			<xsd:complexType name="GTFSType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="Version" type="xsd:int">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="StartPeriod" type="xsd:date">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="EndPeriod" type="xsd:date">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="0" name="Url" type="xsd:string">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="IsDefault" type="xsd:int"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="NewOperation">
+				<xsd:complexType>
+					<xsd:sequence>
+
+						<xsd:element name="in" type="xsd:string"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="NewOperationResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+
+						<xsd:element name="out" type="xsd:string"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getGTFSRequest">
+    <wsdl:part element="tns:getGTFSRequest" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getGTFSResponse">
+    <wsdl:part element="tns:getGTFSResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="getGTFS">
+    <wsdl:operation name="getGTFS">
+      <wsdl:input message="tns:getGTFSRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:getGTFSResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="getGTFSBinding" type="tns:getGTFS">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getGTFS">
+      <soap:operation soapAction="http://www.talend.org/service/getGTFS"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="getGTFS">
+    <wsdl:port binding="tns:getGTFSBinding" name="getGTFS">
+      <soap:address location="http://193.239.192.237:8040/services/getGTFS"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
