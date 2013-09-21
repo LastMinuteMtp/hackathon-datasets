@@ -1,0 +1,38 @@
+route_id,agency_id,route_short_name,route_long_name,route_type
+1,1,"1","Mosson - Odysseum",3
+2,1,"10","Aiguelongue - Celleneuve",3
+3,1,"11","Les Bouisses - Gare Saint-Roch",3
+4,1,"12","Catalpas - Gare Saint-Roch",3
+5,1,"13","Navette Universités - Saint-Eloi",3
+6,1,"14","Les Lacs - Léon Blum",3
+7,1,"15","Place de France - Saint-Cléophas",3
+8,1,"16","Tournezy - Gare Saint-Roch",3
+9,1,"17","Navette Sabines - Fontcouverte",3
+10,1,"18","Lattes - Maurin - Sabines",3
+11,1,"19","Coubertin - Hôtel du Département",3
+12,1,"2","St-Jean de Védas Centre - Jacou",3
+13,1,"20","St Jean de védas (La Lauze - St Hubery)",3
+14,1,"21","ND de Sablassou - Vendargues",3
+15,1,"22","St Eloi - Clapiers - Jacou",3
+16,1,"23","Occitanie - Montferrier - Prades",3
+17,1,"24","La Valsière - Grabels",3
+18,1,"25","Montpellier Mosson - Juvignac",3
+20,1,"28","Parc Expo - Pérols",3
+21,1,"29","ND de Sablassou - Baillargues - St Brès",3
+22,1,"3","Pérols/Lattes - Juvignac",3
+23,1,"30","ND de Sablassou - Le Crès",3
+24,1,"31","ND de Sablassou - Castries - Beaulieu",3
+25,1,"32","Garcia Lorca - Villeneuve les Maguelone",3
+26,1,"33","St Jean Centre - Fabrègues/Saussan",3
+27,1,"34","Montpellier Mosson - Cournonsec",3
+28,1,"35","Castelnau-le-Lez (M. de Rochet - Aube Rouge/Aires)",3
+29,1,"36","Montaud - Charles de Gaulle",3
+30,1,"37","Sablassou - Place de l'Europe",3
+31,1,"38","Cournonsec - Pignan - Lavérune - MTP",3
+32,1,"39","Jacou",3
+33,1,"4","Place Albert 1er - Saint-Denis",3
+34,1,"41","Clinique du Parc - Charles de Gaulle",3
+35,1,"6","Euromédecine - Pas du Loup",3
+36,1,"7","H.Département-Martelle/Bouisses",3
+37,1,"8","Cité de l'Arme - Gare Saint-Roch",3
+38,1,"9","Apollo - Grammont",3
